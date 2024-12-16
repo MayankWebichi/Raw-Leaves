@@ -1980,6 +1980,81 @@ background-color: #25d366;
 				</div>
 					</div>
 				</div>
+
+<style>
+
+	
+.counter-container {
+      background: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      font-size: 16px;
+      position: relative;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+   
+
+    .view-count {
+      font-size: 24px;
+      font-weight: bold;
+      color: #4caf50;
+      display: inline-block;
+      animation: countAnimation 1s ease-out forwards;
+    }
+
+    /* Animation for fading in */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Animation for view count increment */
+    @keyframes countAnimation {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    p {
+      margin: 0;
+      font-size: 14px;
+    }
+  </style>
+
+  <div class="counter-container">
+    <p>This page has been viewed <span id="view-counter" class="view-count">0</span> times.</p>
+  </div>
+
+  <script>
+    const counterElement = document.getElementById('view-counter');
+    let count = parseInt(localStorage.getItem('viewCount')) || 0;
+    
+    // Check if the page has already been viewed in the current session
+    if (!sessionStorage.getItem('hasViewedPage')) {
+      count++;  // Increment count only if the page hasn't been viewed in this session
+      localStorage.setItem('viewCount', count);
+      sessionStorage.setItem('hasViewedPage', 'true');  // Mark that the page has been viewed in this session
+    }
+
+    counterElement.textContent = count;
+  </script>
+
+
+
 		<div class="elementor-element elementor-element-bb9679c e-flex e-con-boxed e-con e-parent" data-id="bb9679c" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
 					<div class="e-con-inner">
 				<div class="elementor-element elementor-element-553d57c elementor-widget elementor-widget-heading" data-id="553d57c" data-element_type="widget" data-widget_type="heading.default">
