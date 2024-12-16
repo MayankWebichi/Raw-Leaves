@@ -517,182 +517,43 @@ class="post-14 page type-page status-publish ast-article-single" id="post-14" it
 </div>
 <section class="contact-form-section">
 	<h2>Contact Us</h2>
-	<form id="contactForm" class="contact-form">
-	  <p>
-		<label>
-		  <i class="form-icon fas fa-user"></i> Your Name<br />
-		  <span class="input-wrap">
-			<input
-			  size="40"
-			  maxlength="400"
-			  class="form-input"
-			  autocomplete="name"
-			  aria-required="true"
-			  type="text"
-			  name="your-name"
-			  required
-			/>
-		  </span>
-		</label>
-	  </p>
-	  <p>
-		<label>
-		  <i class="form-icon fas fa-envelope"></i> Your Email<br />
-		  <span class="input-wrap">
-			<input
-			  size="40"
-			  maxlength="400"
-			  class="form-input"
-			  autocomplete="email"
-			  aria-required="true"
-			  type="email"
-			  name="your-email"
-			  required
-			/>
-		  </span>
-		</label>
-	  </p>
-	  <p>
-		<label>
-		  <i class="form-icon fas fa-tag"></i> Subject<br />
-		  <span class="input-wrap">
-			<input
-			  size="40"
-			  maxlength="400"
-			  class="form-input"
-			  type="text"
-			  name="your-subject"
-			  required
-			/>
-		  </span>
-		</label>
-	  </p>
-	  <p>
-		<label>
-		  <i class="form-icon fas fa-comment-dots"></i> Your Message<br />
-		  <span class="input-wrap">
-			<textarea
-			  cols="40"
-			  rows="5"
-			  maxlength="2000"
-			  class="form-input"
-			  name="your-message"
-			  required
-			></textarea>
-		  </span>
-		</label>
-	  </p>
-	  <p>
-		<button type="submit" class="form-submit-btn">
-		  <i class="fas fa-paper-plane"></i> Submit
-		</button>
-	  </p>
-	</form>
-  </section>
-<style>
+	<form onsubmit="sendWhatsAppMessage(event)" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+		<div style="display: none;">
+		  <input type="hidden" name="_wpcf7" value="34" />
+		  <input type="hidden" name="_wpcf7_version" value="5.9.3" />
+		  <input type="hidden" name="_wpcf7_locale" value="en_US" />
+		  <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f34-o1" />
+		  <input type="hidden" name="_wpcf7_container_post" value="0" />
+		  <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+		</div>
+		<div class="inquiry__fields">
+		  <p>
+			<input size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Enter Name" value="" type="text" name="EnterName" /><br />
+			<input size="40" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Enter Email" value="" type="email" name="EnterEmail" /><br />
 
-	/* Contact Form Section Styling */
-.contact-form-section {
-  padding: 50px 20px;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-
-.contact-form-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  color: #333;
-}
-
-/* Form Styling */
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.contact-form p {
-  margin-bottom: 20px;
-}
-
-.contact-form label {
-  font-size: 1rem;
-  color: #555;
-}
-
-.input-wrap {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.form-icon {
-  font-size: 1.2rem;
-  color: #007bff;
-}
-
-.form-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  outline: none;
-  transition: border-color 0.3s;
-}
-
-.form-input:focus {
-  border-color: #007bff;
-}
-
-/* Submit Button */
-.form-submit-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.form-submit-btn:hover {
-  background-color: #0056b3;
-}
-
-</style>  
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-/>
-<script>
-	
-  document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    // Get form values
-    const name = document.querySelector("input[name='your-name']").value;
-    const email = document.querySelector("input[name='your-email']").value;
-    const subject = document.querySelector("input[name='your-subject']").value;
-    const message = document.querySelector("textarea[name='your-message']").value;
-
-    // WhatsApp API
-    const whatsappNumber = "+917377829606";
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`
-    )}`;
-
-    // Redirect to WhatsApp
-    window.open(whatsappURL, "_blank");
-  });
-</script>
-
-
+			<textarea cols="30" rows="2" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Enter Message" name="EnterMessage"></textarea><br />
+			<input class="wpcf7-form-control wpcf7-submit has-spinner bttn bttn-white" type="submit" value="Inquiry Now" />
+		  </p>
+		</div>
+		<div class="wpcf7-response-output" aria-hidden="true"></div>
+	  </form>
+	  
+	  <script>
+		function sendWhatsAppMessage(event) {
+		  event.preventDefault();
+		  const name = document.querySelector('input[name="EnterName"]').value;
+		  const email = document.querySelector('input[name="EnterEmail"]').value;
+		  
+		  const message = document.querySelector('textarea[name="EnterMessage"]').value;
+		  
+		  const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AMessage: ${message}`;
+		  const whatsappNumber = '918384967991'; // Your WhatsApp number
+		  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+		  
+		  window.open(whatsappLink, '_blank');
+		}
+	  </script>
+	  
 
 	
 	
